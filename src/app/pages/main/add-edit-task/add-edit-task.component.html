@@ -1,0 +1,19 @@
+<div class="model-content">
+  <p *ngIf="task.id === 0">Add New Task</p>
+  <p *ngIf="task.id > 0">Edit Task</p>
+  <div class="form-group">
+    <input [(ngModel)]="task.title" type="text" class="form-control" placeholder="Task Name">
+  </div>
+  <div class="form-group">
+    <input [(ngModel)]="task.desc" type="text" class="form-control" placeholder="Task Description">
+  </div>
+  <button class="btn btn-primary" *ngIf="task.id === 0" (click)="onAddTask()">
+    Add Task
+  </button>
+  <button class="btn btn-primary" *ngIf="task.id > 0" (click)="onEditTask()">
+    Edit
+  </button>
+  <button class="btn btn-danger" (click)="BsModalRef.hide()">
+    Cancel
+  </button>
+</div>
